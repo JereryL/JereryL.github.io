@@ -91,8 +91,8 @@ https://nodejs.org/en/
 
 repository要填写你的仓库地址。修改完后，保存退出，回到终端。输入命令如下
 
-    hexo g
-    hexo d
+    $ hexo g
+    $ hexo d
 
 如果是第一次使用，将要求设置用户名和密码，根据提示设置便可以了。至此，hexo博客已经部署到github上了，可以在浏览器输入你的博客地址便可浏览。博客的地址为一开始设置的仓库名字，例如我的是  
 JereryL.github.io
@@ -114,8 +114,8 @@ JereryL.github.io
 
 验证主题，可以在终端输入:
 
-    hexo g
-    hexo s
+    $ hexo g
+    $ hexo s
 
 然后在localhost:4000上查看是否成功修改。
 
