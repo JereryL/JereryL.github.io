@@ -84,34 +84,28 @@
 
 
 
-<meta name="description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
+<meta name="description" content="static修饰符修饰的内容，涉及到了其在内存中的存储方式。所以先了解一下内存中的结构吧。在内存中变量的存储分为3个区，分别为栈区，堆区，和全局变量区。
 
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+栈区：存储自动变量。自动变量所指的自动，是指系统会为变量自动分配和回收内存，而这段内存空间就在栈区中。通常，在函数里没有修饰的局部变量都是自动变量。
+
+堆区：主要用于动态内存的分配。比如c/c++中的malloc，c++中的new，进行动态分配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在多台电脑管理一个github-hexo博客">
-<meta property="og:url" content="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/index.html">
+<meta property="og:title" content="static修饰符">
+<meta property="og:url" content="http://yoursite.com/2016/11/14/static修饰符/index.html">
 <meta property="og:site_name" content="Jerery">
-<meta property="og:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
+<meta property="og:description" content="static修饰符修饰的内容，涉及到了其在内存中的存储方式。所以先了解一下内存中的结构吧。在内存中变量的存储分为3个区，分别为栈区，堆区，和全局变量区。
 
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
-<meta property="og:updated_time" content="2016-11-02T00:38:52.000Z">
+栈区：存储自动变量。自动变量所指的自动，是指系统会为变量自动分配和回收内存，而这段内存空间就在栈区中。通常，在函数里没有修饰的局部变量都是自动变量。
+
+堆区：主要用于动态内存的分配。比如c/c++中的malloc，c++中的new，进行动态分配">
+<meta property="og:updated_time" content="2016-11-13T17:25:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在多台电脑管理一个github-hexo博客">
-<meta name="twitter:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
+<meta name="twitter:title" content="static修饰符">
+<meta name="twitter:description" content="static修饰符修饰的内容，涉及到了其在内存中的存储方式。所以先了解一下内存中的结构吧。在内存中变量的存储分为3个区，分别为栈区，堆区，和全局变量区。
 
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+栈区：存储自动变量。自动变量所指的自动，是指系统会为变量自动分配和回收内存，而这段内存空间就在栈区中。通常，在函数里没有修饰的局部变量都是自动变量。
+
+堆区：主要用于动态内存的分配。比如c/c++中的malloc，c++中的new，进行动态分配">
 
 
 
@@ -132,10 +126,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/14/static修饰符/"/>
 
 
-  <title> 在多台电脑管理一个github-hexo博客 | Jerery </title>
+  <title> static修饰符 | Jerery </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +243,7 @@
             
             
               
-                在多台电脑管理一个github-hexo博客
+                static修饰符
               
             
           </h1>
@@ -261,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-23T10:07:41+08:00" content="2016-10-23">
-              2016-10-23
+            <time itemprop="dateCreated" datetime="2016-11-14T08:05:00+08:00" content="2016-11-14">
+              2016-11-14
             </time>
           </span>
 
@@ -289,45 +283,50 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
-<li>两台电脑</li>
-<li>两台电脑的SSH key都添加上github</li>
-<li>两台电脑都已经装好Git,node.js,hexo</li>
+        <p>static修饰符修饰的内容，涉及到了其在内存中的存储方式。所以先了解一下内存中的结构吧。在内存中变量的存储分为3个区，分别为栈区，堆区，和全局变量区。</p>
+<ul>
+<li><p>栈区：存储自动变量。自动变量所指的自动，是指系统会为变量自动分配和回收内存，而这段内存空间就在栈区中。通常，在函数里没有修饰的局部变量都是自动变量。</p>
+</li>
+<li><p>堆区：主要用于动态内存的分配。比如c/c++中的malloc，c++中的new，进行动态分配后的内存，系统不会自动回收，需要我们自己手动释放。如上面用malloc和new分配的内存，分别用free和delete释放。</p>
+</li>
+<li><p>全局变量区：顾名思义，全局变量区就是用来存放全局变量的。不仅如此，全局变量区还用来存放static修饰的静态变量。既然static修饰的静态变量跟全局变量是放在同一个内存区的，那么他们的作用肯定是相似的。</p>
+</li>
 </ul>
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在终端或者Git Bash（以下统称终端），进入到博客目录下。输入命令</p>
-<pre><code>$ git init
-</code></pre><p>这个命令是初始化一个git仓库，这样，这个博客文件夹就变成了一个仓库了。</p>
-<h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>在终端输入</p>
-<pre><code>$ git add .
-$ git commit -m &quot;first commit&quot;
-$ git remote add https://github.com/JereryL/JereryL.github.io.git
-$ git push -u origin master
-</code></pre><p>第三条命令要写自己博客的仓库地址。这样，文件夹中的内容就上传到了github仓库了。进入到github仓库中查看，发现一个问题，这里面的文件原本是public文件夹里面的文件，但现在变成了博客根目录下的所有文件了。而且，打开博客网址，发现出错了。于是，我新建一个分支，用来保存博客根文件夹下的文件，master分支下就用来保存生成的网站文件。在终端输入命令如下</p>
-<pre><code>$ git branch hexo
-$ git checkout hexo
-$ git push origin hexo
-</code></pre><p>这样，就创建了hexo分支并提交上github上了。我们最好把hexo分支设置为默认分支,在github上进入到你的仓库，在上面一栏找到”Settings”，点击进入，在”Option”一栏选择”Branches”,修改”Default branch”为hexo,点击”Update”保存修改。这是回到终端，重新提交代码到hexo分支</p>
-<pre><code>$ git add .
-$ git commit -m &quot;branch hexo&quot;
-$ git push origin hexo
-</code></pre><p>这时在github仓库上可以看见提交的代码了。在终端重新生成博客</p>
-<pre><code>$ hexo g
-$ hexo d
-</code></pre><p>进入github仓库的master仓库，可以看见这个分支的代码已经正确生成。</p>
-<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><p>到另一台电脑，在终端进入到你想保存仓库的地址，然后输入</p>
-<pre><code>$ git clone https://github.com/JereryL/JereryL.github.io.git
-</code></pre><p>这时，生成了一个目录JereryL.github.io,在这个目录先安装一个包</p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p>我们尝试在这里生成一下博客</p>
-<pre><code>$ hexo g
-$ hexo d
-</code></pre><p>在github仓库上发现并不能正确生成网站文件,解决方法是将JereryL.github.io文件夹下的.deploy_git删除，重新生成一下，问题解决。</p>
-<p>至此，整个过程完毕。平时修改完博客，只要提交一下文件就行了</p>
-<pre><code>git add .
-git commit -m &quot;备注&quot;
-git push origin hexo
-</code></pre><p>参考自：<br>《使用hexo,如果换了电脑怎么更新博客》<br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">https://www.zhihu.com/question/21193762</a></p>
+<p>下面分四个部分来讲述static:</p>
+<ul>
+<li><p>静态全局变量：静态全局变量在定义它的整个源文件可见，但在其他文件不可用。相对于在整个工程中可见的非静态全局变量，静态变量给全局变量加上了一个限制。那么，使用静态全局变量对比于非静态变量，它的优点是避免了不同源文件间变量的冲突。</p>
+</li>
+<li><p>静态局部变量：静态局部变量在作用域结束时不会马上被释放，等到下次调用时，其初始值为上一次运算赋予的值。例如，当我们在一个函数里声明一个变量，想在下次调用函数时，变量的值是上一次运算后的变量，这时候就可以使用静态局部变量，但这时静态局部变量在函数的外部仍然不可见的。举个例子：</p>
+</li>
+</ul>
+<pre><code>#include &lt;stdio.h&gt;
+int fun(int n)
+{
+     static int f = 1;
+     f = f * n;
+     return f;
+ }
+
+void main()
+{
+    int i,f = 0;
+    for(i = 1; i &lt;= 5; i++)
+    printf(&quot;fun(%d) = %d\n&quot;, i, fun(i));
+    printf(&quot;f = %d\n&quot;, f);
+}
+</code></pre><p>程序运行的结果如下：</p>
+<pre><code>fun(1) = 1
+fun(2) = 2
+fun(3) = 6
+fun(4) = 24
+fun(5) = 120
+f = 0
+</code></pre><ul>
+<li><p>静态函数：静态函数就是用static修饰的函数，他跟静态全局变量是类似的。即它只能被定义它的文件可见，其他文件不可见。</p>
+</li>
+<li><p>静态成员变量：在c++中的类里，如果变量成员使用static修饰的话，那么这个变量对所有对象来说，是只有一份的。即在任何对象修改这个变量，都会影响这个变量在其他对象里的值。对于用static修饰的方法，称为静态方法，静态方法不能访问非静态成员。这是因为在调用静态方法时，并没有将对象的引用传递给它。</p>
+</li>
+</ul>
 
       
     </div>
@@ -359,17 +358,13 @@ git push origin hexo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/22/基于windows10搭建github-hexo博客/" rel="next" title="基于windows10搭建github+hexo博客">
-                <i class="fa fa-chevron-left"></i> 基于windows10搭建github+hexo博客
+              <a href="/2016/11/02/动态数组/" rel="next" title="动态数组">
+                <i class="fa fa-chevron-left"></i> 动态数组
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/02/动态数组/" rel="prev" title="动态数组">
-                动态数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +471,7 @@ git push origin hexo
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作步骤"><span class="nav-number">3.</span> <span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化仓库"><span class="nav-number">3.1.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传代码"><span class="nav-number">3.2.</span> <span class="nav-text">上传代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆仓库"><span class="nav-number">3.3.</span> <span class="nav-text">克隆仓库</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
