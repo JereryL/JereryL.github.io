@@ -233,6 +233,138 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/23/在多台电脑管理一个github-hexo博客/" itemprop="url">
+                  在多台电脑管理一个github-hexo博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-23T10:07:41+08:00" content="2016-10-23">
+              2016-10-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>两台电脑</li>
+<li>两台电脑的SSH key都添加上github</li>
+<li>两台电脑都已经装好Git,node.js,hexo</li>
+</ul>
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在终端或者Git Bash（以下统称终端），进入到博客目录下。输入命令</p>
+<pre><code>$ git init
+</code></pre><p>这个命令是初始化一个git仓库，这样，这个博客文件夹就变成了一个仓库了。</p>
+<h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>在终端输入</p>
+<pre><code>$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add https://github.com/JereryL/JereryL.github.io.git
+$ git push -u origin master
+</code></pre><p>第三条命令要写自己博客的仓库地址。这样，文件夹中的内容就上传到了github仓库了。进入到github仓库中查看，发现一个问题，这里面的文件原本是public文件夹里面的文件，但现在变成了博客根目录下的所有文件了。而且，打开博客网址，发现出错了。于是，我新建一个分支，用来保存博客根文件夹下的文件，master分支下就用来保存生成的网站文件。在终端输入命令如下</p>
+<pre><code>$ git branch hexo
+$ git checkout hexo
+$ git push origin hexo
+</code></pre><p>这样，就创建了hexo分支并提交上github上了。我们最好把hexo分支设置为默认分支,在github上进入到你的仓库，在上面一栏找到”Settings”，点击进入，在”Option”一栏选择”Branches”,修改”Default branch”为hexo,点击”Update”保存修改。这是回到终端，重新提交代码到hexo分支</p>
+<pre><code>$ git add .
+$ git commit -m &quot;branch hexo&quot;
+$ git push origin hexo
+</code></pre><p>这时在github仓库上可以看见提交的代码了。在终端重新生成博客</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>进入github仓库的master仓库，可以看见这个分支的代码已经正确生成。</p>
+<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><p>到另一台电脑，在终端进入到你想保存仓库的地址，然后输入</p>
+<pre><code>$ git clone https://github.com/JereryL/JereryL.github.io.git
+</code></pre><p>这时，生成了一个目录JereryL.github.io,在这个目录先安装一个包</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><p>我们尝试在这里生成一下博客</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>在github仓库上发现并不能正确生成网站文件,解决方法是将JereryL.github.io文件夹下的.deploy_git删除，重新生成一下，问题解决。</p>
+<p>至此，整个过程完毕。平时修改完博客，只要提交一下文件就行了</p>
+<pre><code>git add .
+git commit -m &quot;备注&quot;
+git push origin hexo
+</code></pre><p>参考自：<br>《使用hexo,如果换了电脑怎么更新博客》<br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">https://www.zhihu.com/question/21193762</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/22/基于windows10搭建github-hexo博客/" itemprop="url">
                   基于windows10搭建github+hexo博客
                 </a>
@@ -314,12 +446,45 @@ The key fingerprint is:
 </code></pre><p>至此，SSH key已经生成成功。</p>
 <h1 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h1><p>进入到注册好的github账号，点击”new repository”。在 “Creat a new repository”页面，设置”Repository name”,这个名称比较关键，必须为”你的用户名.github.io”,例如我的用户名为”JereryL”,所以我就设置为”JereryL.github.io”。修改完毕后，其他设置默认就可以了，然后点击”Creat repository”，创建完毕。</p>
 <h1 id="在github添加SSH-key"><a href="#在github添加SSH-key" class="headerlink" title="在github添加SSH key"></a>在github添加SSH key</h1><p>在github页面的右上角有两个下拉菜单，点击右边的那个下拉菜单，选择”Settings”。在“Personal Settings”这一栏中选择“SSH and GPG keys”。在”SSH keys”一栏中点击”New SSH key”，”title”可以随便填。然后将id_rsa.pub里面的内容复制到”Key”里（id_rsa.pub在id_rsa同一个目录里）。最后，点击”Add SSH key”，完成添加。</p>
-<p>将hexo部署上github<br>进入hexo博客所在文件夹，打开_config.yml文件，修改deploy字段如下</p>
+<h1 id="将hexo部署上github"><a href="#将hexo部署上github" class="headerlink" title="将hexo部署上github"></a>将hexo部署上github</h1><p>进入hexo博客所在文件夹，打开_config.yml文件，修改deploy字段如下</p>
 <pre><code>deploy:
 type: git
-repository: https://github.com/JereryL/JereryL.github.io
+repository: https://github.com/JereryL/JereryL.github.io.git
 branch: master
-</code></pre><p>repository要填写你的仓库地址。</p>
+</code></pre><p>repository要填写你的仓库地址。修改完后，保存退出，回到终端。输入命令如下</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>如果是第一次使用，将要求设置用户名和密码，根据提示设置便可以了。至此，hexo博客已经部署到github上了，可以在浏览器输入你的博客地址便可浏览。博客的地址为一开始设置的仓库名字，例如我的是<br>JereryL.github.io</p>
+<h1 id="更换hexo主题"><a href="#更换hexo主题" class="headerlink" title="更换hexo主题"></a>更换hexo主题</h1><p>因为我正在使用的是next主题，所以这里以next主题为例。首先找到next主题的仓库，然后克隆到本机hexo目录下的themes目录，代码如下</p>
+<pre><code>$ cd your-hexo-site
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>下载完成后，在themes/next下会生成一个_config.yml配置文件，这里称其为主题配置文件，而在hexo目录下的那个_config.yml文件则称为站点配置文件。</p>
+<h2 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h2><p>修改站点配置文件：</p>
+<pre><code>theme: next
+</code></pre><p>验证主题，可以在终端输入:</p>
+<pre><code>$ hexo g
+$ hexo s
+</code></pre><p>然后在localhost:4000上查看是否成功修改。</p>
+<h2 id="选择主题风格"><a href="#选择主题风格" class="headerlink" title="选择主题风格"></a>选择主题风格</h2><p>主题配置文件里面的Scheme字段提供了选择next主题下的3种风格，要切换的话将前面的#号去掉即可</p>
+<pre><code>#scheme: Muse
+scheme: Mist
+#scheme: Pisces
+</code></pre><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>修改站点配置语言，将language设置成zh-Hans即可切换为简体中文</p>
+<pre><code>language: zh-Hans
+</code></pre><h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><pre><code>修改主题配置文件，修改如下内容，在启用的菜单项去掉#号，在删除的菜单项加上#号即可
+
+menu:
+  home: /
+  archives: /archives
+  #about: /about
+  #categories: /categories
+  tags: /tags
+  #commonweal: /404.html
+</code></pre><h2 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h2><p>修改站点配置文件，新增字段 avatar，设置头像的链接地址。例如我的头像放在source/images目录下，则我修改为</p>
+<pre><code>avatar: source/images/avatar.jpg
+</code></pre><h2 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h2><p>修改站点配置未见的author。</p>
+<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>修改站点配置文件，设置description字段即可。</p>
+<p>至此，整个站点基本搭建完毕，除此之外，还能加入多说评论系统，但我还没有进行尝试，所以先不做此修改了。最后一点值得注意的是，很多人为了美观，布局，都会删除hello world这篇文章。但不要急着删除，因为在没有其他文章的情况下删除这篇文章，在进行hexo clean后会报错。所以在你写好自己的第一篇文章后才删除这篇文章吧。</p>
 
           
         
@@ -581,7 +746,7 @@ menu:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

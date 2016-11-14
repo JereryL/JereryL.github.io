@@ -106,7 +106,7 @@ hexo
 
 安装Git进入Git的官方网站下载，我选择setup版本，因为Portable版本比较大，而且听说setup版本跟Portable版本区别不大。https://git-scm.com/download/win安装的时候有很多选项，我们使用默认配置，一直选择下一步就行了。
 安装node.js进入nodejs的官网下载">
-<meta property="og:updated_time" content="2016-10-22T16:09:41.230Z">
+<meta property="og:updated_time" content="2016-10-23T02:43:18.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于windows10搭建github+hexo博客">
 <meta name="twitter:description" content="材料
@@ -332,12 +332,45 @@ The key fingerprint is:
 </code></pre><p>至此，SSH key已经生成成功。</p>
 <h1 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h1><p>进入到注册好的github账号，点击”new repository”。在 “Creat a new repository”页面，设置”Repository name”,这个名称比较关键，必须为”你的用户名.github.io”,例如我的用户名为”JereryL”,所以我就设置为”JereryL.github.io”。修改完毕后，其他设置默认就可以了，然后点击”Creat repository”，创建完毕。</p>
 <h1 id="在github添加SSH-key"><a href="#在github添加SSH-key" class="headerlink" title="在github添加SSH key"></a>在github添加SSH key</h1><p>在github页面的右上角有两个下拉菜单，点击右边的那个下拉菜单，选择”Settings”。在“Personal Settings”这一栏中选择“SSH and GPG keys”。在”SSH keys”一栏中点击”New SSH key”，”title”可以随便填。然后将id_rsa.pub里面的内容复制到”Key”里（id_rsa.pub在id_rsa同一个目录里）。最后，点击”Add SSH key”，完成添加。</p>
-<p>将hexo部署上github<br>进入hexo博客所在文件夹，打开_config.yml文件，修改deploy字段如下</p>
+<h1 id="将hexo部署上github"><a href="#将hexo部署上github" class="headerlink" title="将hexo部署上github"></a>将hexo部署上github</h1><p>进入hexo博客所在文件夹，打开_config.yml文件，修改deploy字段如下</p>
 <pre><code>deploy:
 type: git
-repository: https://github.com/JereryL/JereryL.github.io
+repository: https://github.com/JereryL/JereryL.github.io.git
 branch: master
-</code></pre><p>repository要填写你的仓库地址。</p>
+</code></pre><p>repository要填写你的仓库地址。修改完后，保存退出，回到终端。输入命令如下</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>如果是第一次使用，将要求设置用户名和密码，根据提示设置便可以了。至此，hexo博客已经部署到github上了，可以在浏览器输入你的博客地址便可浏览。博客的地址为一开始设置的仓库名字，例如我的是<br>JereryL.github.io</p>
+<h1 id="更换hexo主题"><a href="#更换hexo主题" class="headerlink" title="更换hexo主题"></a>更换hexo主题</h1><p>因为我正在使用的是next主题，所以这里以next主题为例。首先找到next主题的仓库，然后克隆到本机hexo目录下的themes目录，代码如下</p>
+<pre><code>$ cd your-hexo-site
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>下载完成后，在themes/next下会生成一个_config.yml配置文件，这里称其为主题配置文件，而在hexo目录下的那个_config.yml文件则称为站点配置文件。</p>
+<h2 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h2><p>修改站点配置文件：</p>
+<pre><code>theme: next
+</code></pre><p>验证主题，可以在终端输入:</p>
+<pre><code>$ hexo g
+$ hexo s
+</code></pre><p>然后在localhost:4000上查看是否成功修改。</p>
+<h2 id="选择主题风格"><a href="#选择主题风格" class="headerlink" title="选择主题风格"></a>选择主题风格</h2><p>主题配置文件里面的Scheme字段提供了选择next主题下的3种风格，要切换的话将前面的#号去掉即可</p>
+<pre><code>#scheme: Muse
+scheme: Mist
+#scheme: Pisces
+</code></pre><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>修改站点配置语言，将language设置成zh-Hans即可切换为简体中文</p>
+<pre><code>language: zh-Hans
+</code></pre><h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><pre><code>修改主题配置文件，修改如下内容，在启用的菜单项去掉#号，在删除的菜单项加上#号即可
+
+menu:
+  home: /
+  archives: /archives
+  #about: /about
+  #categories: /categories
+  tags: /tags
+  #commonweal: /404.html
+</code></pre><h2 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h2><p>修改站点配置文件，新增字段 avatar，设置头像的链接地址。例如我的头像放在source/images目录下，则我修改为</p>
+<pre><code>avatar: source/images/avatar.jpg
+</code></pre><h2 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h2><p>修改站点配置未见的author。</p>
+<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>修改站点配置文件，设置description字段即可。</p>
+<p>至此，整个站点基本搭建完毕，除此之外，还能加入多说评论系统，但我还没有进行尝试，所以先不做此修改了。最后一点值得注意的是，很多人为了美观，布局，都会删除hello world这篇文章。但不要急着删除，因为在没有其他文章的情况下删除这篇文章，在进行hexo clean后会报错。所以在你写好自己的第一篇文章后才删除这篇文章吧。</p>
 
       
     </div>
@@ -376,6 +409,10 @@ branch: master
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/23/在多台电脑管理一个github-hexo博客/" rel="prev" title="在多台电脑管理一个github-hexo博客">
+                在多台电脑管理一个github-hexo博客 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,7 +480,7 @@ branch: master
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -482,7 +519,7 @@ branch: master
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#材料"><span class="nav-number">1.</span> <span class="nav-text">材料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Git"><span class="nav-number">2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node-js"><span class="nav-number">3.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成SSH-key"><span class="nav-number">5.</span> <span class="nav-text">生成SSH key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立github仓库"><span class="nav-number">6.</span> <span class="nav-text">建立github仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在github添加SSH-key"><span class="nav-number">7.</span> <span class="nav-text">在github添加SSH key</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#材料"><span class="nav-number">1.</span> <span class="nav-text">材料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Git"><span class="nav-number">2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node-js"><span class="nav-number">3.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成SSH-key"><span class="nav-number">5.</span> <span class="nav-text">生成SSH key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立github仓库"><span class="nav-number">6.</span> <span class="nav-text">建立github仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在github添加SSH-key"><span class="nav-number">7.</span> <span class="nav-text">在github添加SSH key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将hexo部署上github"><span class="nav-number">8.</span> <span class="nav-text">将hexo部署上github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换hexo主题"><span class="nav-number">9.</span> <span class="nav-text">更换hexo主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用主题"><span class="nav-number">9.1.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择主题风格"><span class="nav-number">9.2.</span> <span class="nav-text">选择主题风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置语言"><span class="nav-number">9.3.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置菜单"><span class="nav-number">9.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置头像"><span class="nav-number">9.5.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置作者昵称"><span class="nav-number">9.6.</span> <span class="nav-text">设置作者昵称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置站点描述"><span class="nav-number">9.7.</span> <span class="nav-text">设置站点描述</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
