@@ -84,34 +84,19 @@
 
 
 
-<meta name="description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
-
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+<meta name="description" content="今天去了一个面试，c/c++软件开发的。面试的时候面试官就问我如何定义一个动态的二维数组。我当时第一反应就是用vector，但是vector定义的时候能输入两个参数吗？后来我就跟面试官讨论了一下，他就说vector也不是不可以，但是他本义是考我对指针的使用。回到宿舍，我便沿着指针的思路做了一下。
+思路：首先定义一个指针p2，给这个指针分配你想指定大小的内存，作为数组的第二维。然后定义一个指针的指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在多台电脑管理一个github-hexo博客">
-<meta property="og:url" content="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/index.html">
+<meta property="og:title" content="动态数组">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/动态数组/index.html">
 <meta property="og:site_name" content="Jerery">
-<meta property="og:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
-
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
-<meta property="og:updated_time" content="2016-10-23T12:56:51.870Z">
+<meta property="og:description" content="今天去了一个面试，c/c++软件开发的。面试的时候面试官就问我如何定义一个动态的二维数组。我当时第一反应就是用vector，但是vector定义的时候能输入两个参数吗？后来我就跟面试官讨论了一下，他就说vector也不是不可以，但是他本义是考我对指针的使用。回到宿舍，我便沿着指针的思路做了一下。
+思路：首先定义一个指针p2，给这个指针分配你想指定大小的内存，作为数组的第二维。然后定义一个指针的指针">
+<meta property="og:updated_time" content="2016-11-02T15:37:47.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在多台电脑管理一个github-hexo博客">
-<meta name="twitter:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
-准备
-两台电脑
-两台电脑的SSH key都添加上github
-两台电脑都已经装好Git,node.js,hexo
-
-操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+<meta name="twitter:title" content="动态数组">
+<meta name="twitter:description" content="今天去了一个面试，c/c++软件开发的。面试的时候面试官就问我如何定义一个动态的二维数组。我当时第一反应就是用vector，但是vector定义的时候能输入两个参数吗？后来我就跟面试官讨论了一下，他就说vector也不是不可以，但是他本义是考我对指针的使用。回到宿舍，我便沿着指针的思路做了一下。
+思路：首先定义一个指针p2，给这个指针分配你想指定大小的内存，作为数组的第二维。然后定义一个指针的指针">
 
 
 
@@ -132,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/02/动态数组/"/>
 
 
-  <title> 在多台电脑管理一个github-hexo博客 | Jerery </title>
+  <title> 动态数组 | Jerery </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +234,7 @@
             
             
               
-                在多台电脑管理一个github-hexo博客
+                动态数组
               
             
           </h1>
@@ -261,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-23T10:07:41+08:00" content="2016-10-23">
-              2016-10-23
+            <time itemprop="dateCreated" datetime="2016-11-02T23:03:01+08:00" content="2016-11-02">
+              2016-11-02
             </time>
           </span>
 
@@ -289,46 +274,31 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
-<li>两台电脑</li>
-<li>两台电脑的SSH key都添加上github</li>
-<li>两台电脑都已经装好Git,node.js,hexo</li>
-</ul>
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在终端或者Git Bash（以下统称终端），进入到博客目录下。输入命令</p>
-<pre><code>$ git init
-</code></pre><p>这个命令是初始化一个git仓库，这样，这个博客文件夹就变成了一个仓库了。</p>
-<h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>在终端输入</p>
-<pre><code>$ git add .
-$ git commit -m &quot;first commit&quot;
-$ git remote add https://github.com/JereryL/JereryL.github.io.git
-$ git push -u origin master
-</code></pre><p>第三条命令要写自己博客的仓库地址。这样，文件夹中的内容就上传到了github仓库了。进入到github仓库中查看，发现一个问题，这里面的文件原本是public文件夹里面的文件，但现在变成了博客根目录下的所有文件了。而且，打开博客网址，发现出错了。于是，我新建一个分支，用来保存博客根文件夹下的文件，master分支下就用来保存生成的网站文件。在终端输入命令如下</p>
-<pre><code>$ git branch hexo
-$ git checkout hexo
-$ git push origin hexo
-</code></pre><p>这样，就创建了hexo分支并提交上github上了。我们最好把hexo分支设置为默认分支,在github上进入到你的仓库，在上面一栏找到”Settings”，点击进入，在”Option”一栏选择”Branches”,修改”Default branch”为hexo,点击”Update”保存修改。这是回到终端，重新提交代码到hexo分支</p>
-<pre><code>$ git add .
-$ git commit -m &quot;branch hexo&quot;
-$ git push origin hexo
-</code></pre><p>这时在github仓库上可以看见提交的代码了。在终端重新生成博客</p>
-<pre><code>$ hexo g
-$ hexo d
-</code></pre><p>进入github仓库的master仓库，可以看见这个分支的代码已经正确生成。</p>
-<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><p>到另一台电脑，在终端进入到你想保存仓库的地址，然后输入</p>
-<pre><code>$ git clone https://github.com/JereryL/JereryL.github.io.git
-</code></pre><p>这时，生成了一个目录JereryL.github.io,在这个目录先安装一个包</p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p>我们尝试在这里生成一下博客</p>
-<pre><code>$ hexo g
-$ hexo d
-</code></pre><p>在github仓库上发现并不能正确生成网站文件,解决方法是将JereryL.github.io文件夹下的.deploy_git删除，重新生成一下，问题解决。</p>
-<p>至此，整个过程完毕。平时修改完博客，只要提交一下文件就行了</p>
-<pre><code>git add .
-git commit -m &quot;备注&quot;
-git push origin hexo
-</code></pre><p>参考自：<br>《使用hexo,如果换了电脑怎么更新博客》<br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">https://www.zhihu.com/question/21193762</a></p>
+        <p>今天去了一个面试，c/c++软件开发的。面试的时候面试官就问我如何定义一个动态的二维数组。我当时第一反应就是用vector，但是vector定义的时候能输入两个参数吗？后来我就跟面试官讨论了一下，他就说vector也不是不可以，但是他本义是考我对指针的使用。回到宿舍，我便沿着指针的思路做了一下。</p>
+<p>思路：首先定义一个指针p2，给这个指针分配你想指定大小的内存，作为数组的第二维。然后定义一个指针的指针p1，作为数组的第一维，指向p2。代码如下：</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
 
+using namespace std;
+
+int main()
+{
+  int n = 1;
+  int m = 2;
+  int **p1;
+  int *p2;
+  p1 = (int**)malloc(sizeof(int)*n);
+  p2 = (int*)malloc(sizeof(int)*m);
+  p2[0] = 1;
+  p2[1] = 2;
+  *p1 = p2;
+  cout &lt;&lt; p1[0][0] &lt;&lt; endl;
+  cout &lt;&lt; p1[0][1] &lt;&lt; endl;
+  free(p1);
+  free(p2);
+  cin.get();
+}
+</code></pre>
       
     </div>
 
@@ -359,17 +329,13 @@ git push origin hexo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/22/基于windows10搭建github-hexo博客/" rel="next" title="基于windows10搭建github+hexo博客">
-                <i class="fa fa-chevron-left"></i> 基于windows10搭建github+hexo博客
+              <a href="/2016/10/23/在多台电脑管理一个github-hexo博客/" rel="next" title="在多台电脑管理一个github-hexo博客">
+                <i class="fa fa-chevron-left"></i> 在多台电脑管理一个github-hexo博客
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/02/动态数组/" rel="prev" title="动态数组">
-                动态数组 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,7 +442,7 @@ git push origin hexo
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作步骤"><span class="nav-number">3.</span> <span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化仓库"><span class="nav-number">3.1.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传代码"><span class="nav-number">3.2.</span> <span class="nav-text">上传代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆仓库"><span class="nav-number">3.3.</span> <span class="nav-text">克隆仓库</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
