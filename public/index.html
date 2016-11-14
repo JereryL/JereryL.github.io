@@ -233,6 +233,143 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/14/static修饰符/" itemprop="url">
+                  static修饰符
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-14T08:05:00+08:00" content="2016-11-14">
+              2016-11-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>static修饰符修饰的内容，涉及到了其在内存中的存储方式。所以先了解一下内存中的结构吧。在内存中变量的存储分为3个区，分别为栈区，堆区，和全局变量区。</p>
+<ul>
+<li><p>栈区：存储自动变量。自动变量所指的自动，是指系统会为变量自动分配和回收内存，而这段内存空间就在栈区中。通常，在函数里没有修饰的局部变量都是自动变量。</p>
+</li>
+<li><p>堆区：主要用于动态内存的分配。比如c/c++中的malloc，c++中的new，进行动态分配后的内存，系统不会自动回收，需要我们自己手动释放。如上面用malloc和new分配的内存，分别用free和delete释放。</p>
+</li>
+<li><p>全局变量区：顾名思义，全局变量区就是用来存放全局变量的。不仅如此，全局变量区还用来存放static修饰的静态变量。既然static修饰的静态变量跟全局变量是放在同一个内存区的，那么他们的作用肯定是相似的。</p>
+</li>
+</ul>
+<p>下面分四个部分来讲述static:</p>
+<ul>
+<li><p>静态全局变量：静态全局变量在定义它的整个源文件可见，但在其他文件不可用。相对于在整个工程中可见的非静态全局变量，静态变量给全局变量加上了一个限制。那么，使用静态全局变量对比于非静态变量，它的优点是避免了不同源文件间变量的冲突。</p>
+</li>
+<li><p>静态局部变量：静态局部变量在作用域结束时不会马上被释放，等到下次调用时，其初始值为上一次运算赋予的值。例如，当我们在一个函数里声明一个变量，想在下次调用函数时，变量的值是上一次运算后的变量，这时候就可以使用静态局部变量，但这时静态局部变量在函数的外部仍然不可见的。举个例子：</p>
+</li>
+</ul>
+<pre><code>#include &lt;stdio.h&gt;
+int fun(int n)
+{
+     static int f = 1;
+     f = f * n;
+     return f;
+ }
+
+void main()
+{
+    int i,f = 0;
+    for(i = 1; i &lt;= 5; i++)
+    printf(&quot;fun(%d) = %d\n&quot;, i, fun(i));
+    printf(&quot;f = %d\n&quot;, f);
+}
+</code></pre><p>程序运行的结果如下：</p>
+<pre><code>fun(1) = 1
+fun(2) = 2
+fun(3) = 6
+fun(4) = 24
+fun(5) = 120
+f = 0
+</code></pre><ul>
+<li><p>静态函数：静态函数就是用static修饰的函数，他跟静态全局变量是类似的。即它只能被定义它的文件可见，其他文件不可见。</p>
+</li>
+<li><p>静态成员变量：在c++中的类里，如果变量成员使用static修饰的话，那么这个变量对所有对象来说，是只有一份的。即在任何对象修改这个变量，都会影响这个变量在其他对象里的值。对于用static修饰的方法，称为静态方法，静态方法不能访问非静态成员。这是因为在调用静态方法时，并没有将对象的引用传递给它。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/02/动态数组/" itemprop="url">
                   动态数组
                 </a>
@@ -863,11 +1000,7 @@ menu:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-<<<<<<< HEAD
-              <span class="site-state-item-count">3</span>
-=======
-              <span class="site-state-item-count">4</span>
->>>>>>> 9e30365aa3b01cbfda094316f6b8c5eb84820dc3
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
