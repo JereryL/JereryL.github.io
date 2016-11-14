@@ -195,3 +195,4 @@ http://theme-next.iissnan.com/getting-started.html
 Markdown 语法说明 (简体中文版):  
 http://www.appinn.com/markdown/#code
 
+>>>>>>> 9dbb1880e1f35012c5488d0a41af93ddc39efe69
