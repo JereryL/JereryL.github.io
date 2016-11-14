@@ -1,0 +1,656 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="学习笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="材料
+windows 10
+Git
+node.js
+github 账号
+hexo
+
+安装Git进入Git的官方网站下载，我选择setup版本，因为Portable版本比较大，而且听说setup版本跟Portable版本区别不大。https://git-scm.com/download/win安装的时候有很多选项，我们使用默认配置，一直选择下一步就行了。
+安装node.js进入nodejs的官网下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于windows10搭建github+hexo博客">
+<meta property="og:url" content="http://yoursite.com/2016/10/22/基于windows10搭建github-hexo博客/index.html">
+<meta property="og:site_name" content="Jerery">
+<meta property="og:description" content="材料
+windows 10
+Git
+node.js
+github 账号
+hexo
+
+安装Git进入Git的官方网站下载，我选择setup版本，因为Portable版本比较大，而且听说setup版本跟Portable版本区别不大。https://git-scm.com/download/win安装的时候有很多选项，我们使用默认配置，一直选择下一步就行了。
+安装node.js进入nodejs的官网下载">
+<meta property="og:updated_time" content="2016-11-02T00:38:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于windows10搭建github+hexo博客">
+<meta name="twitter:description" content="材料
+windows 10
+Git
+node.js
+github 账号
+hexo
+
+安装Git进入Git的官方网站下载，我选择setup版本，因为Portable版本比较大，而且听说setup版本跟Portable版本区别不大。https://git-scm.com/download/win安装的时候有很多选项，我们使用默认配置，一直选择下一步就行了。
+安装node.js进入nodejs的官网下载">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/22/基于windows10搭建github-hexo博客/"/>
+
+
+  <title> 基于windows10搭建github+hexo博客 | Jerery </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jerery</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                基于windows10搭建github+hexo博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T13:57:39+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h1><ul>
+<li>windows 10</li>
+<li>Git</li>
+<li>node.js</li>
+<li>github 账号</li>
+<li>hexo</li>
+</ul>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><p>进入Git的官方网站下载，我选择setup版本，因为Portable版本比较大，而且听说setup版本跟Portable版本区别不大。<br><a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a><br>安装的时候有很多选项，我们使用默认配置，一直选择下一步就行了。</p>
+<h1 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h1><p>进入nodejs的官网下载，安装的时候一直选择下一步默认安装就可以了。<br><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><p>打开Git Bash，输入如下命令安装hexo</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>进入你想保存博客文件的目录，然后输入以下命令初始化你的博客</p>
+<pre><code>$ hexo init hexo
+</code></pre><p>进入到hexo文件夹，安装一个依赖(例如我的hexo安装在d盘下)</p>
+<pre><code>$ cd d:/hexo
+$ npm install hexo-deployer-git --save
+</code></pre><p>至此，hexo博客已经生成完毕，接下来就要测试一下，在Git Bash进入hexo目录，然后输入</p>
+<pre><code>$ hexo g
+$ hexo s
+</code></pre><p>在浏览器输入localhost:4000，可以看见搭建的hexo博客了。</p>
+<h1 id="生成SSH-key"><a href="#生成SSH-key" class="headerlink" title="生成SSH key"></a>生成SSH key</h1><p>在Git Bash中输入</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;你在github上注册的邮箱&quot;
+</code></pre><p>例如，我的账号为”ljhjerery@sina.com”,所以我就输入</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;ljhjerery@sina.com&quot;
+</code></pre><p>按回车后，它会显示如下提示</p>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Vincent/.ssh/id_rsa):
+</code></pre><p>按回车就行了，生成的SSH key会保存到括号里面的文件中，例如我的SSH key会生成在/c/Users/Vincent/.ssh/id_rsa文件中。然后它会提示你设置密码，如果不设置就空着。</p>
+<pre><code>Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+</code></pre><p>到此它会显示提示</p>
+<pre><code>Your identification has been saved in /c/Users/Vincent/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Vincent/.ssh/id_rsa.pub.
+The key fingerprint is:
+</code></pre><p>至此，SSH key已经生成成功。</p>
+<h1 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h1><p>进入到注册好的github账号，点击”new repository”。在 “Creat a new repository”页面，设置”Repository name”,这个名称比较关键，必须为”你的用户名.github.io”,例如我的用户名为”JereryL”,所以我就设置为”JereryL.github.io”。修改完毕后，其他设置默认就可以了，然后点击”Creat repository”，创建完毕。</p>
+<h1 id="在github添加SSH-key"><a href="#在github添加SSH-key" class="headerlink" title="在github添加SSH key"></a>在github添加SSH key</h1><p>在github页面的右上角有两个下拉菜单，点击右边的那个下拉菜单，选择”Settings”。在“Personal Settings”这一栏中选择“SSH and GPG keys”。在”SSH keys”一栏中点击”New SSH key”，”title”可以随便填。然后将id_rsa.pub里面的内容复制到”Key”里（id_rsa.pub在id_rsa同一个目录里）。最后，点击”Add SSH key”，完成添加。</p>
+<h1 id="将hexo部署上github"><a href="#将hexo部署上github" class="headerlink" title="将hexo部署上github"></a>将hexo部署上github</h1><p>进入hexo博客所在文件夹，打开_config.yml文件，修改deploy字段如下</p>
+<pre><code>deploy:
+type: git
+repository: https://github.com/JereryL/JereryL.github.io.git
+branch: master
+</code></pre><p>repository要填写你的仓库地址。修改完后，保存退出，回到终端。输入命令如下</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>如果是第一次使用，将要求设置用户名和密码，根据提示设置便可以了。至此，hexo博客已经部署到github上了，可以在浏览器输入你的博客地址便可浏览。博客的地址为一开始设置的仓库名字，例如我的是<br>JereryL.github.io</p>
+<h1 id="更换hexo主题"><a href="#更换hexo主题" class="headerlink" title="更换hexo主题"></a>更换hexo主题</h1><p>因为我正在使用的是next主题，所以这里以next主题为例。首先找到next主题的仓库，然后克隆到本机hexo目录下的themes目录，代码如下</p>
+<pre><code>$ cd your-hexo-site
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>下载完成后，在themes/next下会生成一个_config.yml配置文件，这里称其为主题配置文件，而在hexo目录下的那个_config.yml文件则称为站点配置文件。</p>
+<h2 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h2><p>修改站点配置文件：</p>
+<pre><code>theme: next
+</code></pre><p>验证主题，可以在终端输入:</p>
+<pre><code>$ hexo g
+$ hexo s
+</code></pre><p>然后在localhost:4000上查看是否成功修改。</p>
+<h2 id="选择主题风格"><a href="#选择主题风格" class="headerlink" title="选择主题风格"></a>选择主题风格</h2><p>主题配置文件里面的Scheme字段提供了选择next主题下的3种风格，要切换的话将前面的#号去掉即可</p>
+<pre><code>#scheme: Muse
+scheme: Mist
+#scheme: Pisces
+</code></pre><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>修改站点配置语言，将language设置成zh-Hans即可切换为简体中文</p>
+<pre><code>language: zh-Hans
+</code></pre><h2 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h2><pre><code>修改主题配置文件，修改如下内容，在启用的菜单项去掉#号，在删除的菜单项加上#号即可
+
+menu:
+  home: /
+  archives: /archives
+  #about: /about
+  #categories: /categories
+  tags: /tags
+  #commonweal: /404.html
+</code></pre><h2 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h2><p>修改站点配置文件，新增字段 avatar，设置头像的链接地址。例如我的头像放在source/images目录下，则我修改为</p>
+<pre><code>avatar: source/images/avatar.jpg
+</code></pre><h2 id="设置作者昵称"><a href="#设置作者昵称" class="headerlink" title="设置作者昵称"></a>设置作者昵称</h2><p>修改站点配置未见的author。</p>
+<h2 id="设置站点描述"><a href="#设置站点描述" class="headerlink" title="设置站点描述"></a>设置站点描述</h2><p>修改站点配置文件，设置description字段即可。</p>
+<p>至此，整个站点基本搭建完毕，除此之外，还能加入多说评论系统，但我还没有进行尝试，所以先不做此修改了。最后一点值得注意的是，很多人为了美观，布局，都会删除hello world这篇文章。但不要急着删除，因为在没有其他文章的情况下删除这篇文章，在进行hexo clean后会报错。所以在你写好自己的第一篇文章后才删除这篇文章吧。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/18/ubuntu16-04搭建github-hexo博客/" rel="next" title="ubuntu16.04搭建github+hexo博客">
+                <i class="fa fa-chevron-left"></i> ubuntu16.04搭建github+hexo博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/23/在多台电脑管理一个github-hexo博客/" rel="prev" title="在多台电脑管理一个github-hexo博客">
+                在多台电脑管理一个github-hexo博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Jerery" />
+          <p class="site-author-name" itemprop="name">Jerery</p>
+          <p class="site-description motion-element" itemprop="description">我想我可以忍住悲伤，假装生命里没有你。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#材料"><span class="nav-number">1.</span> <span class="nav-text">材料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Git"><span class="nav-number">2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node-js"><span class="nav-number">3.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成SSH-key"><span class="nav-number">5.</span> <span class="nav-text">生成SSH key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立github仓库"><span class="nav-number">6.</span> <span class="nav-text">建立github仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在github添加SSH-key"><span class="nav-number">7.</span> <span class="nav-text">在github添加SSH key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将hexo部署上github"><span class="nav-number">8.</span> <span class="nav-text">将hexo部署上github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更换hexo主题"><span class="nav-number">9.</span> <span class="nav-text">更换hexo主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用主题"><span class="nav-number">9.1.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择主题风格"><span class="nav-number">9.2.</span> <span class="nav-text">选择主题风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置语言"><span class="nav-number">9.3.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置菜单"><span class="nav-number">9.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置头像"><span class="nav-number">9.5.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置作者昵称"><span class="nav-number">9.6.</span> <span class="nav-text">设置作者昵称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置站点描述"><span class="nav-number">9.7.</span> <span class="nav-text">设置站点描述</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerery</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

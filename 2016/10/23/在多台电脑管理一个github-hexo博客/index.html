@@ -1,0 +1,613 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="学习笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
+准备
+两台电脑
+两台电脑的SSH key都添加上github
+两台电脑都已经装好Git,node.js,hexo
+
+操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在多台电脑管理一个github-hexo博客">
+<meta property="og:url" content="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/index.html">
+<meta property="og:site_name" content="Jerery">
+<meta property="og:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
+准备
+两台电脑
+两台电脑的SSH key都添加上github
+两台电脑都已经装好Git,node.js,hexo
+
+操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+<meta property="og:updated_time" content="2016-11-02T00:38:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在多台电脑管理一个github-hexo博客">
+<meta name="twitter:description" content="前言一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。
+准备
+两台电脑
+两台电脑的SSH key都添加上github
+两台电脑都已经装好Git,node.js,hexo
+
+操作步骤初始化仓库在终端或者Git Bash（以下统称终端），进入到博客">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/23/在多台电脑管理一个github-hexo博客/"/>
+
+
+  <title> 在多台电脑管理一个github-hexo博客 | Jerery </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jerery</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在多台电脑管理一个github-hexo博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-23T10:07:41+08:00" content="2016-10-23">
+              2016-10-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般情况下，我们部署好的博客只能在一台电脑上管理，因为要管理博客需要在博客的文件夹下操作。所以我们要找到一个方法共享这个文件夹。而github本身就是一个代码托管仓库，何不就直接将代码托管到github上。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>两台电脑</li>
+<li>两台电脑的SSH key都添加上github</li>
+<li>两台电脑都已经装好Git,node.js,hexo</li>
+</ul>
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在终端或者Git Bash（以下统称终端），进入到博客目录下。输入命令</p>
+<pre><code>$ git init
+</code></pre><p>这个命令是初始化一个git仓库，这样，这个博客文件夹就变成了一个仓库了。</p>
+<h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>在终端输入</p>
+<pre><code>$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add https://github.com/JereryL/JereryL.github.io.git
+$ git push -u origin master
+</code></pre><p>第三条命令要写自己博客的仓库地址。这样，文件夹中的内容就上传到了github仓库了。进入到github仓库中查看，发现一个问题，这里面的文件原本是public文件夹里面的文件，但现在变成了博客根目录下的所有文件了。而且，打开博客网址，发现出错了。于是，我新建一个分支，用来保存博客根文件夹下的文件，master分支下就用来保存生成的网站文件。在终端输入命令如下</p>
+<pre><code>$ git branch hexo
+$ git checkout hexo
+$ git push origin hexo
+</code></pre><p>这样，就创建了hexo分支并提交上github上了。我们最好把hexo分支设置为默认分支,在github上进入到你的仓库，在上面一栏找到”Settings”，点击进入，在”Option”一栏选择”Branches”,修改”Default branch”为hexo,点击”Update”保存修改。这是回到终端，重新提交代码到hexo分支</p>
+<pre><code>$ git add .
+$ git commit -m &quot;branch hexo&quot;
+$ git push origin hexo
+</code></pre><p>这时在github仓库上可以看见提交的代码了。在终端重新生成博客</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>进入github仓库的master仓库，可以看见这个分支的代码已经正确生成。</p>
+<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><p>到另一台电脑，在终端进入到你想保存仓库的地址，然后输入</p>
+<pre><code>$ git clone https://github.com/JereryL/JereryL.github.io.git
+</code></pre><p>这时，生成了一个目录JereryL.github.io,在这个目录先安装一个包</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><p>我们尝试在这里生成一下博客</p>
+<pre><code>$ hexo g
+$ hexo d
+</code></pre><p>在github仓库上发现并不能正确生成网站文件,解决方法是将JereryL.github.io文件夹下的.deploy_git删除，重新生成一下，问题解决。</p>
+<p>至此，整个过程完毕。平时修改完博客，只要提交一下文件就行了</p>
+<pre><code>git add .
+git commit -m &quot;备注&quot;
+git push origin hexo
+</code></pre><p>参考自：<br>《使用hexo,如果换了电脑怎么更新博客》<br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="external">https://www.zhihu.com/question/21193762</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/22/基于windows10搭建github-hexo博客/" rel="next" title="基于windows10搭建github+hexo博客">
+                <i class="fa fa-chevron-left"></i> 基于windows10搭建github+hexo博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/02/动态数组/" rel="prev" title="动态数组">
+                动态数组 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Jerery" />
+          <p class="site-author-name" itemprop="name">Jerery</p>
+          <p class="site-description motion-element" itemprop="description">我想我可以忍住悲伤，假装生命里没有你。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作步骤"><span class="nav-number">3.</span> <span class="nav-text">操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化仓库"><span class="nav-number">3.1.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传代码"><span class="nav-number">3.2.</span> <span class="nav-text">上传代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆仓库"><span class="nav-number">3.3.</span> <span class="nav-text">克隆仓库</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jerery</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
